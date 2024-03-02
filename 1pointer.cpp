@@ -1,6 +1,6 @@
 #include<iostream>
 #include<stdio.h>
-#include<stdlib.h>
+#include<stdlib.h>     //Library for malloc
 using namespace std;
 int main()
 {
@@ -32,8 +32,9 @@ int main()
 //Array in heap memory
 
     int *h;
-    //h=(int *)malloc(5*sizeof(int));    //c
-    h=new int[5];                        //c++
+    //h=(int *)malloc(5*sizeof(int));    //-> c
+
+    h=new int[5];                        //-> c++
     h[0]=10;h[1]=15;h[2]=14;h[3]=21;h[4]=31;
 
     for(int i=0;i<5;i++)
@@ -49,6 +50,7 @@ int main()
 //because dynamic memory gets deleted autmatically one the program ends.
 
 
+
 int *a1;
 char *a2;
 float *a3;
@@ -56,7 +58,7 @@ double *a4;
 struct Rectangle *a5;
 
 
-//All displays 8
+//All displays 8(depends on compiler)
 
 cout<<sizeof(a1)<<endl;
 cout<<sizeof(a2)<<endl;
