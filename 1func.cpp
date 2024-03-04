@@ -1,3 +1,7 @@
+/*
+
+// FUNCTION
+
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -19,3 +23,18 @@ int add(int x,int y)
     int sum=x+y;
     return sum;
 }
+
+*/
+
+
+// PASS BY VALUE
+// PASS BY ADDRESS
+// PASS BY REFERENCE
+
+
+
+
+
+
+
+
