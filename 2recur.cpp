@@ -164,3 +164,79 @@ int main()
     printf("%d\n", a);   //DISPLAYS 50
 }
 */
+
+
+
+/*
+
+//TREE RECURSION
+
+#include<stdio.h>
+
+void fun(int n)
+{
+    if(n>0)
+    {
+    printf("%d ",n);
+    fun(n-1);
+    fun(n-1);
+    }
+}
+int main()
+{
+    fun(3);
+
+}
+*/
+
+
+/*
+// INDIRECT RECURSION
+
+#include<stdio.h>
+
+void funB(int m);
+
+void funA(int n)
+{
+    if(n>0)
+    {
+        printf("%d ",n);
+        funB(n-1);
+    }
+}
+void funB(int m)
+{
+    if(m>1)
+    {
+        printf("%d ",m);
+        funA(m/2);
+    }
+}
+int main()
+{
+    funA(20);
+}
+*/
+
+
+
+
+//NESTED RECURSION
+
+#include<stdio.h>
+
+int fun(int n)
+{
+    if(n>100)
+    {
+        return n-10;
+    }
+    return fun(fun(n+11));
+}
+int main()
+{
+    int r;
+    r=fun(27);
+    printf("%d\n",r);
+}
