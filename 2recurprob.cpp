@@ -1,5 +1,11 @@
+//RECURSION FUNCTIONS
+
+
+
 
 /*
+//SUM OF N NATURAL NUMBERS
+
 #include<stdio.h>
 #include<iostream>
 
@@ -23,7 +29,14 @@ int main()
 */
 
 
+
+
+
+
+
 /*
+//FACTORIAL
+
 #include<iostream>
 using namespace std;
 
@@ -45,7 +58,13 @@ int main()
 */
 
 
+
+
+
+
 /*
+//POWER USING RECURSION
+
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -67,7 +86,13 @@ int main()
 */
 
 
+
+
+
+
 /*
+//POWER USING RECURSION (FASTER)
+
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -93,7 +118,14 @@ int main()
 */
 
 
+
+
+
+
+
 /*
+//TAYLOR'S SERIES
+
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -124,7 +156,14 @@ int main()
 */
 
 
+
+
+
+
+
 /*
+//TAYLOR'S SERIES(ITERATIVE VERSION)
+
 #include<stdio.h>
 #include<iostream>
 
@@ -152,7 +191,15 @@ int main()
 */
 
 
+
+
+
+
+
+
 /*
+//TAYLOR'S SERIES USING HORNER'S RULE(RECURSIVE VERSION)
+
 #include<stdio.h>
 #include<iostream>
 using namespace std;
@@ -176,7 +223,15 @@ int main()
 */
 
 
+
+
+
+
+
+
 /*
+//TAYLOR'S SERIES USING HORNER'S RULE (ITERATIVE VERSION)
+
 #include<stdio.h>
 #include<iostream>
 using namespace std;
@@ -199,7 +254,16 @@ int main()
 }
 */
 
+
+
+
+
+
+
+
 /*
+//FIBONACCI SERIES (ITERATIVE VERSION)
+
 #include<stdio.h>
 #include<iostream>
 using namespace std;
@@ -227,7 +291,13 @@ int main()
 */
 
 
+
+
+
+
+
 /*
+//FIBONACCI SERIES (RECURSIVE VERSION)
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -248,7 +318,14 @@ int main()
 */
 
 
+
+
+
+
+
+
 /*
+//FIBONACCI SERIES (MEMOIZATION VERSION)
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -289,7 +366,15 @@ int main()
 */
 
 
+
+
+
+
+
+
+
 /*
+//nCr COMBINATION FORMULA (USING FACTORIAL FUNCTION)
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -318,7 +403,15 @@ int main()
 */
 
 
+
+
+
+
+
+
 /*
+//nCr (PASCAL'S TRIANGLE)
+
 #include<iostream>
 #include<stdio.h>
 using namespace std;
@@ -338,6 +431,13 @@ int main()
 }
 */
 
+
+
+
+
+
+
+//TOWER OF HANOI
 
 #include<stdio.h>
 #include<iostream>
