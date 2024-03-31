@@ -3,10 +3,13 @@
 
 struct Array
 {
-    int A[10];
+    int *A;
     int size;
     int length;
 };
+
+
+
 
 void Display(struct Array arr)
 {
@@ -18,11 +21,15 @@ void Display(struct Array arr)
 }
 
 
-//Append is gonna add a new element at the end of the array.
-//As it's going to modify the array, it should be a call by address type
+
+
+
+
+
+
 void Append(struct Array *arr, int x)  
 {
-    if(arr->length < arr->size)    //if length =size then where will you append the new element?? length should be atleast 1 less than size so that there is 1 index left to be filled
+    if(arr->length < arr->size)   
         arr->A[arr->length++]=x;   
 }
 
@@ -38,6 +45,14 @@ void Insert(struct Array *arr, int index, int x)
         arr->length++;
     }
 }
+
+
+
+
+
+
+
+
 
 int Delete(struct Array *arr, int index)
 {
@@ -55,6 +70,12 @@ int Delete(struct Array *arr, int index)
     return 0;
 }
 
+
+
+
+
+
+
 int linearsearch(struct Array arr, int key)
 {
     for(int i=0;i<arr.length;i++)
@@ -65,6 +86,12 @@ int linearsearch(struct Array arr, int key)
     return -1;
 }
 
+
+
+
+
+
+
 void swap(int *x, int *y)
 {
     int temp;
@@ -72,6 +99,13 @@ void swap(int *x, int *y)
     *x=*y;
     *y=temp;
 }
+
+
+
+
+
+
+
 
 int transposition(struct Array *arr, int key)
 {
@@ -86,6 +120,12 @@ int transposition(struct Array *arr, int key)
     return -1;
 }
 
+
+
+
+
+
+
 int MoveToHead(struct Array *arr, int key)
 {
     for(int i=0;i<arr->length;i++)
@@ -98,6 +138,12 @@ int MoveToHead(struct Array *arr, int key)
     }
     return -1;
 }
+
+
+
+
+
+
 
 int Binarysearch(struct Array arr,int key)
 {
@@ -118,6 +164,13 @@ int Binarysearch(struct Array arr,int key)
     return -1;
 }
 
+
+
+
+
+
+
+
 int Recbin(int a[],int l, int h, int key)
 {
     int mid;
@@ -134,6 +187,13 @@ int Recbin(int a[],int l, int h, int key)
     return -1;
 }
 
+
+
+
+
+
+
+
 int get(struct Array arr, int index)
 {
   if(index>=0 && index < arr.length)
@@ -142,6 +202,11 @@ int get(struct Array arr, int index)
     
 }
 
+
+
+
+
+
 void Set(struct Array *arr, int index, int x)
 {
     if(index>=0 && index < arr->length)
@@ -149,6 +214,12 @@ void Set(struct Array *arr, int index, int x)
         arr->A[index]=x;
     }
 }
+
+
+
+
+
+
 
 int Max(struct Array arr)
 {
@@ -164,6 +235,14 @@ int Max(struct Array arr)
     return max;
 }
 
+
+
+
+
+
+
+
+
 int Min(struct Array arr)
 {
     int min;
@@ -178,6 +257,14 @@ int Min(struct Array arr)
     return min;
 }
 
+
+
+
+
+
+
+
+
 int Sum(struct Array arr)
 {
     int sum=0;
@@ -188,12 +275,27 @@ int Sum(struct Array arr)
     return sum;
 }
 
+
+
+
+
+
+
+
+
+
 int SumR(struct Array arr, int n)
 {
     if(n<0)
        return 0;
     return SumR(arr,n-1)+arr.A[n];
 }
+
+
+
+
+
+
 
 
 float Avg(struct Array arr, int n)
@@ -206,10 +308,21 @@ float Avg(struct Array arr, int n)
     return total/n;
 }
 
+
+
+
+
+
+
 float avg(struct Array arr)
 {
     return (float)Sum(arr)/arr.length;
 }
+
+
+
+
+
 
 
 void Reverse(struct Array *arr)
@@ -230,6 +343,12 @@ void Reverse(struct Array *arr)
 }
 
 
+
+
+
+
+
+
 void Rev2(struct Array *arr)
 {
     int i,j;
@@ -242,6 +361,14 @@ void Rev2(struct Array *arr)
     }
 }
 
+
+
+
+
+
+
+
+
 void leftshift(struct Array *arr)
 {
     int i;
@@ -250,6 +377,14 @@ void leftshift(struct Array *arr)
         arr->A[i-1]=arr->A[i];
     }
 }
+
+
+
+
+
+
+
+
 
 void rotateleft(struct Array *arr)
 {
@@ -265,6 +400,15 @@ void rotateleft(struct Array *arr)
         arr->A[i-1]=arr->A[i];
     }
 }
+
+
+
+
+
+
+
+
+
 
 
 void rightshift(struct Array *arr)  
@@ -288,6 +432,16 @@ void rshift(struct Array *arr)
 }
 
 
+
+
+
+
+
+
+
+
+
+
 void rotateRight(struct Array *arr)  
 {
     int i;
@@ -309,6 +463,14 @@ void rotateRight(struct Array *arr)
 }
 
 
+
+
+
+
+
+
+
+
 void insertsort(struct Array *arr, int x)
 {
     int i=arr->length-1;
@@ -324,6 +486,13 @@ void insertsort(struct Array *arr, int x)
 }
 
 
+
+
+
+
+
+
+
 int isSort(struct Array arr)
 {
     int i;
@@ -334,6 +503,13 @@ int isSort(struct Array arr)
     }
     return 1;  //true
 }
+
+
+
+
+
+
+
 
 
 void arrange(struct Array *arr)
@@ -356,63 +532,177 @@ void arrange(struct Array *arr)
         }
     }
 }
+
+
+
+
+
+
+
+
+
+
+struct Array* Merge(struct Array *arr1,struct Array *arr2)  // Merge takes 2 arrays
+{
+    int i,j,k;
+    i=j=k=0;
+
+    struct Array *arr3=(struct Array *)malloc(sizeof(struct Array));
+
+    while(i<arr1->length && j<arr2->length)
+    {
+        if(arr1->A[i]<arr2->A[j])
+                 arr3->A[k++]=arr1->A[i++];
+        else
+                arr3->A[k++]=arr2->A[j++];
+    }
+    for(; i<arr1->length; i++ )
+        arr3->A[k++]=arr1->A[i];
+
+    for(; j<arr2->length; j++)
+        arr3->A[k++]=arr2->A[j];
+
+    arr3->length=arr1->length+arr2->length;
+    arr3->size=10;
+
+    return arr3;
+}
+
+
+
+
+
+
+
+
+
+
+
+struct Array* Union(struct Array *arr1,struct Array *arr2)  
+{
+    int i,j,k;
+    i=j=k=0;
+
+    struct Array *arr3=(struct Array *)malloc(sizeof(struct Array));
+
+    while(i<arr1->length && j<arr2->length)
+    {
+        if(arr1->A[i] < arr2->A[j])        
+                 arr3->A[k++]=arr1->A[i++];
+
+        else if(arr2->A[j] < arr1->A[i])  
+                arr3->A[k++]=arr2->A[j++];
+
+        else               
+        {
+                arr3->A[k++]=arr1->A[i++];
+                j++;
+        }
+    }
+    for(; i<arr1->length; i++ )
+        arr3->A[k++]=arr1->A[i];
+
+    for(; j<arr2->length; j++)
+        arr3->A[k++]=arr2->A[j];
+
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+
+
+
+
+
+
+
+
+
+
+struct Array* Intersect(struct Array *arr1,struct Array *arr2)  
+{
+    int i,j,k;
+    i=j=k=0;
+
+    struct Array *arr3=(struct Array *)malloc(sizeof(struct Array));
+
+    while(i<arr1->length && j<arr2->length)
+    {
+        if(arr1->A[i] < arr2->A[j])        
+                i++;
+
+        else if(arr2->A[j] < arr1->A[i])   
+                j++;
+
+        else if(arr1->A[i] == arr2->A[j])               
+        {
+                arr3->A[k++]=arr1->A[i++];
+                j++;
+        }
+    }
+    arr3->length=k;
+    arr3->size=10;
+
+    return arr3;
+}
+
+
+
+
+
 int main()
 {
-    struct Array arr ={{2,-3,4,5,-7},10,5};
+    //Should know the size of array
+    //Because there's a pointer and i should dynamically create an array
+    //And assign it to that pointer
+    struct Array arr1;
+    int ch;
+    int x,index;
 
-    // Append(&arr, 10);
+    printf("Enter size of array: ");
+    scanf("%d",&arr1.size);
+    arr1.A=(int *)malloc(arr1.size*sizeof(int));
 
-    // Insert(&arr,4,9);
+do
+{
 
-    // Delete(&arr,0);    //void
+    printf("\n\nMenu\n");
+    printf("1. Insert\n");
+    printf("2. Delete\n");
+    printf("3. Search\n");
+    printf("4. Sum\n");
+    printf("5. Display\n");
+    printf("6.Exit\n");
 
-    // // printf("%d ",Delete(&arr,0)); //return 
+    printf("enter you choice: ");
+    scanf("%d",&ch);
 
-    // // printf("%d\n",linearsearch(arr,5));
+    switch(ch)
+    {
+    case 1: printf("Enter an element and index");
+    scanf("%d%d",&x,&index);
+    Insert(&arr1,index,x);
+    break;
 
-    // // printf("%d\n",transposition(&arr,3));
+    case 2: printf("Enter index ");
+    scanf("%d",&index);
+    x=Delete(&arr1,index);
+    printf("Deleted Element is %d\n",x);
+    break;
 
-    // // printf("%d\n",MoveToHead(&arr,4));
+    case 3:printf("Enter element to search ");
+    scanf("%d",&x);
+    index=linearsearch(arr1,x);
+    printf("Element index %d",index);
+    break;
 
-    // printf("%d\n ",Binarysearch(arr,6));
+    case 4:printf("Sum is %d\n",Sum(arr1));
+    break;
 
-    // printf("%d\n ",Recbin(arr.A, 0, arr.length, 3));
+    case 5:Display(arr1);
 
-    // printf("%d\n",get(arr, 1));
-
-    // Set(&arr,1,9);
-
-    // printf("%d\n",Max(arr));
-
-    // printf("%d\n",Min(arr));
-
-    // printf("%d\n",Sum(arr));
-
-    // printf("%d\n",SumR(arr, arr.length-1));
-
-    // printf("%f\n",Avg(arr,arr.length));
-
-    // printf("%f\n",avg(arr));
-
-    // Reverse(&arr);
-
-    // Rev2(&arr);
-
-    // leftshift(&arr);
-
-    // rotateleft(&arr);
-
-    // rightshift(&arr);
-
-    // rshift(&arr);
-
-    // rotateRight(&arr);
-
-    // insertsort(&arr,6 );
-
-    // printf("%d\n ", isSort(arr));
-
-    // arrange(&arr);
-
-    Display(arr);
+ }
+}while(ch<6);
+return 0;
 }
