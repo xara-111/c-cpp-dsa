@@ -33,6 +33,12 @@ void Append(struct Array *arr, int x)
         arr->A[arr->length++]=x;   
 }
 
+
+
+
+
+
+
 void Insert(struct Array *arr, int index, int x)
 {
     if(index >= 0 && index <= arr->length)
@@ -420,6 +426,11 @@ void rightshift(struct Array *arr)
     }
     arr->A[0]=0;
 }
+
+
+
+
+
 
 void rshift(struct Array *arr)  
 {
