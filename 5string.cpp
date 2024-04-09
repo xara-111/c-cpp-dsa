@@ -177,5 +177,7 @@ int main()
             printf("Not palindrome\n");
 
 
-
+//DUPLICATE
+//ANAGRAM
+//PERMUTATION OF STRING
 }
