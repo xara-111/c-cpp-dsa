@@ -62,3 +62,5 @@ int main()
     printf("\n");
     display(m);
 }
+
+//UPPER TRIANGULAR MATRIX ALSO.
