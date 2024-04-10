@@ -7,6 +7,7 @@ public:
  int j;
  int x;
 };
+
 class Sparse
 {
 private:
