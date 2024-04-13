@@ -300,7 +300,55 @@ void Duplicate(struct Node *p)
     }
 }
 
+void Reverse(struct Node *p)
+{
+    int *A;
+    struct Node *q=p;
+    int i=0;
+    A=(int *)malloc(sizeof(int)*count(p));
+    while(q!=NULL)
+    {
+        A[i]=q->data;
+        q=q->next;
+        i++;
+    }
+    q=p;
+    i--;
+    while(q!=0)
+    {
+        q->data=A[i];
+        q=q->next;
+        i--;
+    }
+}
 
+void linkRev(struct Node *p)
+{
+    Node *q=NULL;
+    Node *r=NULL;
+    while(p!=NULL)
+    {
+        r=q;
+        q=p;
+        p=p->next;
+        q->next=r;
+    }
+    first=q;
+
+}
+
+void Rrev(struct Node *q, struct Node *p)
+{
+    if(p!=NULL)
+    {
+        Rrev(p,p->next);
+        p->next=q;
+    }
+    else
+    {
+        first=q;
+    }
+}
 int main()
 {
     int A[]={3, 5, 7,10,15}; //create link list using these elements
@@ -357,7 +405,9 @@ int main()
     // Display(first);
 
 
-    Reverse(first);
+    // Reverse(first);
+    // linkRev(first);
+    Rrev(NULL,first);
     Display(first);
 
 }
