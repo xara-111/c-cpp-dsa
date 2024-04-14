@@ -5,7 +5,7 @@ struct Node
 {
     int data;
     struct Node *next;
-}*first=NULL;  //Declaring a pointer here, it becomes a global pointer, it can be directly accessed or pass it as parameter.
+}*first=NULL, *second=NULL, *third=NULL;  //Declaring a pointer here, it becomes a global pointer, it can be directly accessed or pass it as parameter.
 
 void create(int A[], int n)
 {
@@ -17,6 +17,25 @@ void create(int A[], int n)
     first->data=A[0];  //Giving it the first element
     first->next=NULL;  //Since it's the first node, there's nothing beyond this one so null
     last=first;       //Making last point at first
+
+    for(i=1; i<n; i++)
+    {
+        t=(struct Node *)malloc(sizeof(struct Node));
+        t->data=A[i];
+        t->next=NULL;
+        last->next=t;
+        last=t;
+    }
+}
+
+void create2(int A[], int n)
+{
+    int i;
+    struct Node *t, *last;  
+    second=(struct Node *)malloc(sizeof(struct Node));
+    second->data=A[0];  //Giving it the first element
+    second->next=NULL;  //Since it's the first node, there's nothing beyond this one so null
+    last=second;       //Making last point at first
 
     for(i=1; i<n; i++)
     {
@@ -349,10 +368,98 @@ void Rrev(struct Node *q, struct Node *p)
         first=q;
     }
 }
+
+
+void concat(struct Node *p, struct Node *q)
+{
+    third=p; //pointer third point on first
+    while(p->next!=NULL)
+    {
+        p=p->next;
+    }
+    p->next=q;
+    //second=NULL;
+}
+
+void merge(struct Node *p, struct Node *q)
+{
+    struct Node *last;
+    if(p->data <q->data)
+    {
+        third=last=p;
+        p=p->next;
+        last->next=NULL;
+    }
+    else
+    {
+        third=last=q;
+        q=q->next;
+        last->next=NULL;
+    }
+
+    while(p && q)
+    {
+        if(p->data <q->data)
+        {
+            last->next=p;
+            last=p;
+            p=p->next;
+            last->next=NULL;
+        }
+        else
+        {
+            last->next=q;
+            last=q;
+            q=q->next;
+            last->next=NULL;
+        }
+    }
+    if(p)
+    {
+        last->next=p;
+    }
+    else
+    {
+        last->next=q;
+    }
+}
+
+int isLoop(struct Node *f)
+{
+    struct Node *p, *q;
+    p=q=f;
+    do
+    {
+        p=p->next;
+        q=q->next;
+        q=q?q->next:q;
+    } while (p && q && p!=q);
+
+    if(p==q)
+        return 1;
+    else
+        return 0;
+    
+}
+
+
 int main()
 {
-    int A[]={3, 5, 7,10,15}; //create link list using these elements
+
+    struct Node *t1, *t2;
+
+    int A[]={10, 20, 30, 40, 50}; //create link list using these elements
+    int B[]={5, 15, 25, 35, 45};
     create(A,5);
+    create2(B,5);
+
+    printf("First\n");
+    Display(first);
+    printf("\n\n");
+    printf("Second\n");
+    Display(second);
+
+
     // Display(first);
     // Rdisplay(first);
     // Rrevdisplay(first);
@@ -407,7 +514,32 @@ int main()
 
     // Reverse(first);
     // linkRev(first);
-    Rrev(NULL,first);
-    Display(first);
+    // Rrev(NULL,first);
+    // Display(first);
+
+    // concat(first,second);
+    // printf("Concatinated\n");
+    // Display(third);
+
+    // merge(first,second);
+    // printf("Merged\n");
+    // Display(third);
+
+
+
+
+//Actually making a loop in linked list(Strps to form a loop)
+    // t1=first->next->next;
+    // t2=first->next->next->next->next;
+    // t2->next=t1;
+
+    // if(isLoop(first))
+    // {
+    //     printf("Loop\n");
+    // }
+    // else
+    // {
+    //     printf("No loop\n");
+    // }
 
 }
