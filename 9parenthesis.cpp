@@ -1,4 +1,3 @@
-//NOT RUNNING THO :(
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -62,7 +61,7 @@ int isBalanced(char *exp)
 }
 int main()
 {
-   char *exp= (char *)"((a+b)*(c-d))";
+   char *exp= (char *)"((a+b)*(c-d))";    //(char *)-For conversion from string literal to character
 
    printf("%d ",isBalanced(exp));
 }

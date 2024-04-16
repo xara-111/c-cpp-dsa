@@ -81,8 +81,9 @@ int isOperand(char x)
 char * IntoPost(char *infix)
 {
     int i=0,j=0;
-    char *postfix;
     int len= strlen(infix);
+
+    char *postfix;
     postfix=(char *)malloc((len+2)*sizeof(char));
     while(infix[i]!='\0')
     {
