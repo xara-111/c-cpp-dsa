@@ -116,6 +116,8 @@ preorder1(p->rightchild);
 }
 }
 
+
+
 void inorder1(struct node *p)
 {
 if(p)
