@@ -83,7 +83,7 @@ int main()
 
 #include<stdio.h>
 
-int fun(int n)
+int fun(int n)  //Could also be the code for finding square of a number
 {
     static int x=0;
     if(n>0)

@@ -155,9 +155,33 @@ int main()
 }
 */
 
+/*
+//Taylor series(2nd attempt) ,c only
 
+#include<stdio.h>
+double e(double x, double n)
+{
+  static double p=1,f=1;
+  double r;
+  if(n==0)
+     return 1;
+  r=e(x,n-1);
+  p=p*x;
+  f=f*n;
+  return r+p/f;
+}
 
-
+int main()
+{
+  double x;
+  double n;
+  printf("Enter x: ");
+  scanf("%lf",&x);
+  printf("Enter n: ");
+  scanf("%lf",&n);
+  printf("Result: %lf\n",e(x,n));
+}
+*/
 
 
 
@@ -433,7 +457,29 @@ int main()
 
 
 
+/*
+//nCr(pascal, 2nd attempt)
+#include<stdio.h>
 
+int c(int n, int r)
+{
+  if(n==r || r==0)
+      return 1;
+  return c(n-1,r-1)+c(n-1,r);
+}
+int main()
+{
+  int n;
+  int r;
+  printf("Enter n: ");
+  scanf("%d",&n);
+  printf("Enter r: ");
+  scanf("%d",&r);
+  printf("Result=%d\n",c(n,r));
+
+}
+
+*/
 
 
 

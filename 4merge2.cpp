@@ -42,7 +42,7 @@ struct Array Merge(struct Array *arr1,struct Array *arr2)  // Merge takes 2 arra
         arr3.A[k++]=arr2->A[j];
 
     arr3.length=arr1->length+arr2->length;
-    arr3.size=10;
+    //arr3.size=10;
 
     return arr3;
 }

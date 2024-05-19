@@ -3,7 +3,7 @@
 
 struct Array
 {
-    int A[10];
+    int A[11];
     int size;
     int length;
 };
@@ -41,15 +41,15 @@ struct Array* Merge(struct Array *arr1,struct Array *arr2)  // Merge takes 2 arr
         arr3->A[k++]=arr2->A[j];
 
     arr3->length=arr1->length+arr2->length;
-    arr3->size=10;
+    arr3->size=11; 
 
     return arr3;
 }
 int main()
 {
     //Create 2 array and initialize them
-    struct Array arr1={{2,6,10,15,25},10,5};
-    struct Array arr2={{3,4,7,18,20},10,5};
+    struct Array arr1={{2,6,10,15,25},11,5};
+    struct Array arr2={{3,4,7,18,20,24},11,6};
 
     //Function Merge will create 3rd array and in main we'll take it's pointer
     struct Array *arr3;
