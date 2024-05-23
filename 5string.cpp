@@ -152,6 +152,8 @@ int main()
     else
             printf("1st string is Greater\n");
 
+
+
     char P[]="civics";
     char R[6];
     for(i=0; P[i]!='\0'; i++)

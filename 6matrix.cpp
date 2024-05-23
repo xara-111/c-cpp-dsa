@@ -28,7 +28,7 @@ void display(struct Matrix m)
         for(j=0;j<m.n;j++)
         {
             if(i==j)
-                  printf("%d ",m.A[i-1]);
+                  printf("%d ",m.A[i]);
 
             else
                   printf("0 ");
