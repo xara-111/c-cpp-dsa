@@ -93,7 +93,7 @@ int Rcount(struct Node *p)
 {
     if(p==0)
         return 0;
-    return count(p->next)+1;
+    return Rcount(p->next)+1;
 }
 
 int add(struct Node *p)
@@ -256,11 +256,11 @@ int Delete(struct Node *p, int index)
     int x=-1;
     int i;
 
-    if(index < 1 ||index > count(p))
+    if(index <1 || index > count(p))
           return -1;
     if(index==1)
     {
-        p=first;
+        //p=first;
         x=first->data;
         first=first->next;
         free(p);
@@ -268,7 +268,7 @@ int Delete(struct Node *p, int index)
     }
     else
     {
-        p=first;
+        //p=first;
         q=NULL;
         for(i=0; i<index-1 && p; i++)
         {
@@ -492,12 +492,13 @@ int main()
     // Insert(first,3,2);  //We can call insert function multiple time for creating the whole link list
     // Display(first);
 
-    // Sortedinsert(first,6);
+    // Sortedinsert(first,11);
     // printf("\n\n");
     // Display(first);
 
-    // printf("Deleted Element is %d\n",Delete(first,5));
-    // Display(first);
+
+    printf("Deleted Element is %d\n",Delete(first,1));
+    Display(first);
 
     // if(isSorted(first))
     // {

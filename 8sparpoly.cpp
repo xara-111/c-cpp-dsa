@@ -7,6 +7,7 @@ struct Node
  int exp;
  struct Node *next;
 }*poly=NULL;
+
 void create()
 {
  struct Node *t,*last=NULL;
