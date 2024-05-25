@@ -529,7 +529,7 @@ int main()
 
 
 
-//Actually making a loop in linked list(Strps to form a loop)
+//Actually making a loop in linked list(Steps to form a loop)
     // t1=first->next->next;
     // t2=first->next->next->next->next;
     // t2->next=t1;
