@@ -73,9 +73,9 @@ int pre(char x)
 int isOperand(char x)
 {
     if(x=='+' || x=='-' || x=='*' || x=='/')
-             return 0;
+             return 0; //false
         else
-             return 1;
+             return 1; //true
 }
 
 char * IntoPost(char *infix)

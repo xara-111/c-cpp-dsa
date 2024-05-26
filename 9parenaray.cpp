@@ -1,5 +1,6 @@
 #include<stdio.h>
 #include<stdlib.h>
+#include<string.h>
 
 struct Stack
 {
@@ -8,13 +9,6 @@ struct Stack
     int *S;
 };
 
-void create(struct Stack *st)
-{
-    printf("Enter size: ");
-    scanf("%d",&st->size);
-    st->top=-1;
-    st->S=(int *)malloc(st->size * sizeof(int));
-}
 
 void Display(struct Stack st)
 {
@@ -26,7 +20,7 @@ void Display(struct Stack st)
     printf("\n");
 }
 
-void push(struct Stack *st, int x)
+void push(struct Stack *st, char x)
 {
     if(st->top==st->size-1)
          printf("Stack Overflow\n");
@@ -49,17 +43,7 @@ int pop(struct Stack *st)
     return x;
 }
 
-int peek(struct Stack st, int index)
-{
-    int x=-1;
-    if(st.top-index+1 <0)
-          printf("Invalid position\n");
-    else
-    {
-        x=st.S[st.top-index+1];
-    }
-    return x;
-}
+
 
 
 int isEmpty(struct Stack st)
@@ -78,27 +62,37 @@ int isFull(struct Stack st)
             return 0;
 }
 
-int stackTop(struct Stack st)
+
+int isBalanced(char *exp)
 {
-    if(!isEmpty(st))   //if not empty
-           return st.S[st.top];
-    return -1;
+    struct Stack st;
+    st.size=strlen(exp);
+    st.top=-1;
+    st.S=(int *)malloc(st.size*sizeof(int));
+
+    for(int i=0; exp[i]!='\0'; i++)
+    {
+        if(exp[i]=='(')
+           push(&st, exp[i]);
+        else if(exp[i]==')')
+        {
+            if(isEmpty(st))
+               return 0;
+            pop(&st);
+        }
+    }
+    if(isEmpty(st))
+           return 1;
+    return 0;
 }
-
-  
-
 int main()
 {
     
     struct Stack st;
-    create(&st);
-    push(&st,10);
-    push(&st,20);
-    push(&st,30);
+    char *exp=(char *)"((a+b)*(c-d))";
 
-    // printf("%d \n",pop(&st));
-    printf("%d \n",peek(st,3));
-    Display(st);
-
-    //TRY MENU DRIVEN PROGRAM
+    //create(&st,exp);
+    
+    
+    printf("%d\n",isBalanced(exp));
 }

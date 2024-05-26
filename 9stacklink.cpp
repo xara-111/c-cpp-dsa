@@ -51,6 +51,43 @@ void Display()
     }
     printf("\n");
 }
+
+int peek (int index)
+{
+    struct Node *p;
+    int x=-1;
+    p=top;
+    for(int i=0; p!=NULL && i<index-1; i++)
+    {
+        p=p->next;
+    }
+    if(p!=NULL)
+       return p->data;
+    return -1;
+}
+
+int stacktop()
+{
+    if(top)
+       return top->data;
+    return -1;
+}
+
+int isempty()
+{
+    if(top==NULL)
+       return 1;
+    return 0;
+}
+
+int isfull()
+{
+    struct Node *t;
+    t=(struct Node *)malloc(sizeof(struct Node));
+    if(t==NULL)
+        return 1;
+    return 0;
+}
 int main()
 {
     push(10);
@@ -58,6 +95,10 @@ int main()
     push(30);
 
     Display();
-    printf("%d ",pop());
+    printf("%d\n ",pop());
+
+    printf("%d\n ",peek(1));
+
+    printf("%d", stacktop());
     
 }

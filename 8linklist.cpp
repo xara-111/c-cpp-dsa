@@ -446,7 +446,8 @@ int isLoop(struct Node *f)
 int main()
 {
 
-    struct Node *t1, *t2;
+    //struct Node *t1, *t2; //(Required for isLoop)
+   
 
     int A[]={10, 20, 30, 40, 50}; //create link list using these elements
     int B[]={5, 15, 25, 35, 45};
@@ -497,8 +498,8 @@ int main()
     // Display(first);
 
 
-    printf("Deleted Element is %d\n",Delete(first,1));
-    Display(first);
+    // printf("Deleted Element is %d\n",Delete(first,1));
+    // Display(first);
 
     // if(isSorted(first))
     // {
