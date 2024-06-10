@@ -412,7 +412,7 @@ int main()
 
     // printf("%d\n ", isSort(arr));
 
-    // arrange(&arr);
+    arrange(&arr);
 
     Display(arr);
 }
